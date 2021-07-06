@@ -23,17 +23,19 @@ body {
     width: 500px;
     height: 120px;
     text-align: center;
+
 }
 
 #wrapper h1 {
     margin: 0 0 20px;
     padding: 0;
     font-weight: 300;
-    font-size: 30px;
+    font-size: 50px;
 }
 
 #wrapper h1 b{
     font-weight: 700;
+
 }
 
 #start {
@@ -43,6 +45,9 @@ body {
     vertical-align: middle;
     font-family: "微软雅黑";
     cursor: pointer;
+    /*font-size: 28px;*/
+
+    
 }
 
 #stop {
@@ -52,6 +57,9 @@ body {
     vertical-align: middle;
     font-family: 微软雅黑;
     cursor: pointer;
+    /*font-size: 28px;*/
+
+
 }
 
 #cfg {
