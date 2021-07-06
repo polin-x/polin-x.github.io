@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>menu</title>
+		<style>
+			.hide {
+				display: none;
+			}
+
+			html {
+				height: 100%
+			}
+
+			body {
+				width: 100%;
+				height: 100%;
+				padding-top: 50vh;
+				margin-top: -76px;
+				text-align: center;
+				background: rgb(226, 225, 225)
+			}
+
+			button {
+				width: 600px;
+				border: none;
+				border-radius: 10px;
+				padding: 10px 15px;
+				font-size: 5.5rem;
+				background: #fff;
+				/* color: #f2c0ff; */
+				box-shadow: 5px 5px 5px dimgray;
+
+			}
+
+			p {
+				font-size: 5.5rem;
+				color: #ce61e9;
+			}
+		</style>
+	</head>
+	<body>
+
+		<button id="start">中午吃啥呢？</button>
+		<button id="stop" class="hide">停</button>
+		<p> </p>
+
+		<script>
+			const lunchPlaces = [
+				'拉面',
+				'板面',
+				'朝天锅',
+				'肉火烧',
+				'卷饼',
+				'鸡蛋灌饼',
+				'小菜一碟',
+				'包子',
+				'小笼包',
+				'水饺',
+				'混沌',
+				'餐厅',
+			]
+
+			let timeout = 0;
+
+			let getRandomIndice = (max) => {
+				return Math.floor(Math.random() * max)
+			};
+
+			let rollDices = () => {
+				let node = document.querySelector('p');
+				let i = 0;
+				timeout = setInterval(() => {
+					if (i === lunchPlaces.length) {
+						i = 0;
+					}
+					node.textContent = lunchPlaces[i];
+					i++;
+				}, 100)
+			}
+			let count = 0;
+			document.getElementById('start').onclick = () => {
+				rollDices();
+				document.getElementById('start').classList.add('hide');
+				document.getElementById('stop').classList.remove('hide');
+				document.querySelector('p').textContent = '';
+			};
+
+			document.getElementById('stop').onclick = () => {
+				if (count <= 4) {
+
+					let rest = lunchPlaces[getRandomIndice(lunchPlaces.length)];
+					clearInterval(timeout);
+					document.getElementById('start').classList.remove('hide');
+					document.getElementById('stop').classList.add('hide');
+					document.querySelector('p').textContent = rest;
+					count++;
+
+				} else {
+					alert('这么挑食中午就别吃了吧')
+				}
+			};
+		</script>
+	</body>
+</html>
