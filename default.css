@@ -102,8 +102,21 @@ body {
     height: 22px;
 }
 
-#weibo {
+#beian {
     position: absolute;
     bottom: 15px;
     right: 15px;
+    margin: 0 auto;
 }
+
+#beian a {
+    color: var(--text-color);
+    text-decoration: none;
+    cursor: pointer;
+    transition: color .2s ease-in-out,background-color .2s ease-in-out;
+}
+
+/*.beian {
+    bottom: 10px;
+}
+*/
